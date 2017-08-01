@@ -28,9 +28,8 @@ public class PhotoQuiz {
 		// 5. call the pack() method on the quiz window
 		
 		// 6. ask a question that relates to the image
-		pack(Component);
-		String answer = JOptionPane.showInputDialog("What type of habitat is this?" +Forest ); 
 		
+		String answer = JOptionPane.showInputDialog("What type of habitat is this? " +Forest ); 
 		// 7. print "CORRECT" if the user gave the right answer
 		if (answer.equals("rainforest")) {
 			JOptionPane.showMessageDialog(null, "CORRECT");
@@ -43,12 +42,13 @@ public class PhotoQuiz {
 
 		// 10. find another image and create it (might take more than one line of code)
 		String Wolf = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjsucf0yrbVAhUEWCYKHfrgDowQjRwIBw&url=http%3A%2F%2Fwallpapercave.com%2Fwolfpack-wallpaper&psig=AFQjCNF4pGn298JNBFEwoMWnel0OV8MsJA&ust=1501695792866177";
-		
+		createImage(Wolf);
 		// 11. add the second image to the quiz window
 
 		// 12. pack the quiz window
 
 		// 13. ask another question
+		pack(Wolf);
 		String animal = JOptionPane.showInputDialog("What animal is this?");
 		// 14+ check answer, say if correct or incorrect, etc.
 		if (animal.equals("wolf")) {
