@@ -20,17 +20,15 @@ public class PhotoQuiz {
 		// image, and select “Copy Image URL”)
 		String Forest = "https://i.ytimg.com/vi/pPrO2jlay40/maxresdefault.jpg";
 		// 2. create a variable of type "Component" that will hold your image
-		String Component = Forest;
+		Component image;
 		// 3. use the "createImage()" method below to initialize your Component
-		createImage(Component);
+		image = createImage(Forest);
 		// 4. add the image to the quiz window
-		
+		quizWindow.add(image);
 		// 5. call the pack() method on the quiz window
-		
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-		JOptionPane.showMessageDialog(null, "This Question Will Be Easy");
-		String answer = JOptionPane.showInputDialog("What Type Of Habitat Is This? " + Component ); 
-		pack(answer);
+		String answer = JOptionPane.showInputDialog("What Type Of Habitat Is This? "); 
 		// 7. print "CORRECT" if the user gave the right answer
 		if (answer.equals("rainforest")) {
 			JOptionPane.showMessageDialog(null, "CORRECT");
@@ -40,18 +38,17 @@ public class PhotoQuiz {
 			JOptionPane.showMessageDialog(null, "INCORRECT");
 		}
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
-
+		quizWindow.remove(image);
 		// 10. find another image and create it (might take more than one line of code)
-		String  second= "https://qph.ec.quoracdn.net/main-qimg-8911285b5a56a936b8ca047c3dc7da62-c";
-		createImage(second);
+		String  second= "http://robinsdesign.net/image/cache/catalog//DNA-Strand-Cross-Stitch-Pattern-PDF/DNA-Strand-Cross-Stitch-Pattern-PDF-2-900x900.jpg";
+		Component molecule;
 		// 11. add the second image to the quiz window
-		
+		molecule = createImage(second);
+		quizWindow.add(molecule);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-		JOptionPane.showMessageDialog(null, "This Question Will Be Extremely Easy");
 		String strand = JOptionPane.showInputDialog("What Is The Scientific Name For This Molecule?");
-		pack(strand);
 		// 14+ check answer, say if correct or incorrect, etc.
 		if (strand.equals("deoxyribonucleic acid")) {
 			JOptionPane.showMessageDialog(null, "CORRECT");
