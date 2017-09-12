@@ -13,29 +13,48 @@ public class BodyPartQuiz {
 
 	// Get 3 celebrity photos from the internet, save them to your computer, and fill
 	// in their paths here. To get the path, right click on the image, and copy its Location.
-	String firstImage = "https://i.pinimg.com/736x/f3/7f/cd/f37fcd5f42a5573abb9f3fb70dab5a90--jhope-bts-bangtan-boy.jpg";
-	String secondImage = "http://www.bigbangmusic.info/images/import/2016-12/bigbang-promotional-photos-8.jpeg";
-	String thirdImage = "http://i.imgur.com/30d5NFS.jpg";
+	String firstImage = "/Users/League/Desktop/JH.jpg";
+	String secondImage = "/Users/League/Desktop/GD.jpeg";
+	String thirdImage = "/Users/League/Desktop/KJ.jpg";
 
 	Frame window = new Frame();
 	
 	private void startQuiz() {
 		// Set the size of the window so that you can only see part of the image.
-		Component image;
-		image = createImage(firstImage);
-			window.setSize(500,500);
+		window.setSize(200,300);
 		// Make an int variable to hold the score.
-
+			int score = 0;
 		// Ask the user who this person is and store their answer
-
+			String answer = JOptionPane.showInputDialog("Who Is This Person?");
 		// If they got the answer right:
+			if (answer.equals("Jung Hoseok")) {
+				JOptionPane.showMessageDialog(null, "Correct");
+				score += 1;
+			}
 		// -- Tell them they are correct.
 		// -- Increase the score by 1
 
 		// Otherwise:
+			else {
+				JOptionPane.showMessageDialog(null, "Incorrect");
+			}
 		// -- Tell them they are wrong
-
 		// Use the method below to show the next image
+			JOptionPane.showMessageDialog(null, "Score = " +score);
+			showNextImage();
+			window.setSize(200, 400);
+			String input = JOptionPane.showInputDialog("Who Is This Person?");
+			if (input.equals("Kwon Jiyong")) {
+				JOptionPane.showMessageDialog(null, "Correct");
+				score += 1;
+				JOptionPane.showMessageDialog(null, "Score = " +score);
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Incorrect");
+			}
+			showNextImage();
+			String in = JOptionPane.showInputDialog("Who Is This Person?");
+			
 		// Show the score
 		// .... repeat for all your images.....
 	}
