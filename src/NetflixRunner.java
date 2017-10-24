@@ -2,9 +2,9 @@
 public class NetflixRunner {
 	public static void main(String[] args) {
 		Movie TrainToBusan = new Movie("Train To Busan", 10, 119);
-		Movie Avatar = new Movie("Avatar", 10, 142);
-		Movie PacificRim = new Movie("Pacific Rim", 10, 120);
-		Movie Deadpool = new Movie("Deadpool", 10, 120);
+		Movie Avatar = new Movie("Avatar", 9, 142);
+		Movie PacificRim = new Movie("Pacific Rim", 8, 120);
+		Movie Deadpool = new Movie("Deadpool", 7, 120);
 		Movie IT = new Movie("IT", 1, 100);
 		
 		String price = TrainToBusan.getTicketPrice();
@@ -27,6 +27,11 @@ public class NetflixRunner {
 		queue.addMovie(IT);
 		queue.printMovies();
 		Movie Bestmovie = queue.getBestMovie();
+		System.out.println("The best movie is " +Bestmovie.getTitle());
+		queue.sortMoviesByRating();
+		Movie second = queue.getMovie(1);
+		System.out.println("The second best movie is " +second.getTitle());
+	
 		}
 
 }
