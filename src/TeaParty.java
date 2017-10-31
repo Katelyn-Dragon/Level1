@@ -18,19 +18,18 @@
  * Good luck with your party!
  **/
 public class TeaParty {
-public String welcome(String lastName, boolean isWoman, boolean isKnighted{
+public String welcome(String lastName, boolean isWoman, boolean isKnighted){
 	if (isKnighted) {
-		System.out.println("Hello Sir " +lastName);
+		return "Hello Sir " +lastName;
+		
 	}
 	else if (isWoman) {
-		System.out.println("Hello Ms " +lastName);
+		return "Hello Ms. " +lastName;
+		
 	}
 	else {
-		System.out.println("Hello Mr " +lastName);
+		return "Hello Mr. "+lastName;
 	}
 }
-    {
-       
-    }
 
 }
