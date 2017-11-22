@@ -11,4 +11,5 @@ public class PizzaRobot {
 		this.name = name;
 		this.tasteLevel = tasteLevel;
 	}
+	
 }

@@ -3,6 +3,7 @@ public class Pizza {
 	Pizza pizza = new Pizza(5.00, 6, 150, "small");
 	Pizza pizza2 = new Pizza(7.00, 8,  200, "medium");
 	Pizza pizza3 = new Pizza(10.00, 10, 500, "large")	;
+	Pizza pizza4 = new Pizza(15.00, 10, 100, "Extra Large");
 	
 	int first = pizza.getTastiness();
 	System.out.println(first);
@@ -46,11 +47,10 @@ public class Pizza {
 		return this.sizes;
 	}
 
-	public void setTastiness(int tastiness) {
+	public void setTastiness (int tastiness) {
 		this.tastiness = tastiness;
 	}
-
-	public void setPrice(double price) {
+	public void setPrice (double price) {
 		this.price = price;
 	}
 }
