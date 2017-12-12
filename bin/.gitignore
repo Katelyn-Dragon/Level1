@@ -1,6 +1,8 @@
 /Animal.jpg
 /BodyPartQuiz.class
 /BookOfIllusions.class
+/Calculator.class
+/Cup.class
 /Drum Set.jpg
 /DrumKit.class
 /DrumSound.wav
@@ -11,18 +13,13 @@
 /JH.jpg
 /Jeopardy.class
 /KJ.jpg
-/MethodPractice.class
-/Movie.class
-/NewDrumKit.jpg
-/commons-logging-1.1.3.jar
-/confuse.jpg
-/faces.jpg
-/twitter4j-core-3.0.5.jar
-/Cup.class
 /Kettle$Water.class
 /Kettle.class
+/MethodPractice.class
+/Movie.class
 /NetflixQueue.class
 /NetflixRunner.class
+/NewDrumKit.jpg
 /PhotoQuiz.class
 /Pizza.class
 /PizzaRobot.class
@@ -36,4 +33,8 @@
 /TeaParty.class
 /TeaPartyTest.class
 /Wolves.class
-/Calculator.class
+/commons-logging-1.1.3.jar
+/confuse.jpg
+/faces.jpg
+/twitter4j-core-3.0.5.jar
+/SwingListenerExample.class
