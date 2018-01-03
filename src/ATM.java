@@ -60,15 +60,15 @@ public class ATM implements ActionListener {
 		// TODO Auto-generated method stub
 		JButton buttonPressed = (JButton) e.getSource();
 		if (button.equals(buttonPressed)) {
-			System.out.println("Deposit");
+			System.out.println("Deposited Money");
 			double add = Double.parseDouble(text.getText());
 			balance = balance + add;
-			System.out.println("$" + balance);
+			text3.setText("$" + balance);
 		} else {
-			System.out.println("Withdraw");
+			System.out.println("Withdrew Money");
 			double add = Double.parseDouble(text2.getText());
 			balance = balance - add;
-			System.out.println("$" + balance);
+			text3.setText("$" + balance);
 		}
 	}
 }
