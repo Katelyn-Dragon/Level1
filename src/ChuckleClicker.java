@@ -10,30 +10,37 @@ public class ChuckleClicker implements ActionListener {
 		ChuckleClicker clicker = new ChuckleClicker();
 		clicker.makeButtons();
 	}
-
+	JFrame frame = new JFrame();
 	JButton button = new JButton();
 	JButton button2 = new JButton();
 	JPanel panel = new JPanel();
 	
 public void makeButtons (){
-	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(300, 300);
+	frame.add(panel);
 	frame.setVisible(true);
 	frame.setTitle("Chuckle Clicker");
 	button.setText("Joke");
 	button2.setText("Punchline");
 	button.addActionListener(this);
 	button2.addActionListener(this);
-	
-}
+	panel.add(button);
+	panel.add(button2);
+	frame.pack();
+	}
 
 
 
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
-	
+	JButton buttonPressed =(JButton)e.getSource();
+	if (button.equals(buttonPressed)) {
+		System.out.println("joke");
+	}
+	else {
+		System.out.println("punchline");
+	}
 }
 	
 }
