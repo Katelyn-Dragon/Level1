@@ -34,7 +34,7 @@ public class Scoreboard implements ActionListener {
 	int awayScore = 0;
 	int homeFouls = 0;
 	int awayFouls = 0;
-	int homeTO = 5;
+	int homeTO = 0;
 	int awayTO = 0;
 
 	public void run() {
@@ -53,26 +53,41 @@ public class Scoreboard implements ActionListener {
 		hTOLabel.setText(Integer.toString(homeTO));
 		aTOLabel.setText(Integer.toString(awayTO));
 		
+		hScoreLabel.setText("Score: " + homeScore);
+		aScoreLabel.setText("Score: " + awayScore);
+		hFoulsLabel.setText("Fouls: " + homeFouls);
+		aFoulsLabel.setText("Fouls: " + awayFouls);
+		hTOLabel.setText("Timeouts: " + homeTO);
+		aTOLabel.setText("Timeouts: " + awayTO);
+		
 		frame.setTitle("Scoreboard");
 
 		mainPanel.add(panel);
 		mainPanel.add(panel2);
 		
-		frame.setLayout(new BorderLayout());
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		frame.add(mainPanel);
 
-		panel.setLayout(new BorderLayout());
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		panel.add(homeLabel, BorderLayout.NORTH);
 		panel.add(hScoreLabel, BorderLayout.SOUTH);
 		panel.add(hFoulsLabel, BorderLayout.CENTER);
 		panel.add(hTOLabel, BorderLayout.SOUTH);
 		
-		panel2.setLayout(new BorderLayout());
+		panel2.setLayout(new BoxLayout(panel2, BoxLayout.PAGE_AXIS));
+		
+		panel2.setLayout(new BoxLayout(panel2, BoxLayout.PAGE_AXIS));
 		panel2.add(awayLabel, BorderLayout.NORTH);
 		panel2.add(aScoreLabel, BorderLayout.SOUTH);
 		panel2.add(aFoulsLabel, BorderLayout.CENTER);
+		panel2.add(aTOLabel, BorderLayout.SOUTH);
 		
 		frame.pack();
+	}
+	
+	public void changeScore(int newScore) {
+		homeScore += newScore
+		homeScore.setText(Integer.toString(Score));
 	}
 
 	@Override
