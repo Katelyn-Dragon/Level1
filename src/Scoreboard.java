@@ -42,6 +42,7 @@ public class Scoreboard implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(300, 300);
 		frame.setVisible(true);
+		frame.setTitle("Scoreboard");
 		
 		homeLabel.setText("Home");
 		awayLabel.setText("Away");
@@ -60,8 +61,6 @@ public class Scoreboard implements ActionListener {
 		hTOLabel.setText("Timeouts: " + homeTO);
 		aTOLabel.setText("Timeouts: " + awayTO);
 		
-		frame.setTitle("Scoreboard");
-
 		mainPanel.add(panel);
 		mainPanel.add(panel2);
 		
@@ -85,9 +84,25 @@ public class Scoreboard implements ActionListener {
 		frame.pack();
 	}
 	
-	public void changeScore(int newScore) {
-		homeScore += newScore
-		homeScore.setText(Integer.toString(Score));
+	public void changeHomeScore(int newHomeScore) {
+		homeScore += newHomeScore;
+		hScoreLabel.setText(Integer.toString(homeScore));
+		
+	}
+	
+	public void changeAwayScore(int newAwayScore) {
+		awayScore += newAwayScore;
+		aScoreLabel.setText(Integer.toString(awayScore));
+		
+	}
+	
+	public void sethomeLabel(String newHomeName) {
+		homeLabel.setName(newHomeName);
+		
+	}
+	
+	public void setawayLabel(String newAwayName) {
+		awayLabel.setName(newAwayName);
 	}
 
 	@Override
