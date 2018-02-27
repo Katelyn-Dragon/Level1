@@ -34,8 +34,8 @@ public class Scoreboard implements ActionListener {
 	int awayScore = 0;
 	int homeFouls = 0;
 	int awayFouls = 0;
-	int homeTO = 0;
-	int awayTO = 0;
+	int homeTO = 3;
+	int awayTO = 3;
 
 	public void run() {
 		JFrame frame = new JFrame();
@@ -86,13 +86,13 @@ public class Scoreboard implements ActionListener {
 	
 	public void changeHomeScore(int newHomeScore) {
 		homeScore += newHomeScore;
-		hScoreLabel.setText(Integer.toString(homeScore));
+		hScoreLabel.setText("Score: " + Integer.toString(homeScore));
 		
 	}
 	
 	public void changeAwayScore(int newAwayScore) {
 		awayScore += newAwayScore;
-		aScoreLabel.setText(Integer.toString(awayScore));
+		aScoreLabel.setText("Score: " + Integer.toString(awayScore));
 		
 	}
 	
