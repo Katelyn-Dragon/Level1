@@ -28,6 +28,8 @@ public class ControlPanel implements ActionListener {
 	JButton awayMinusButton = new JButton();
 	JButton homeTOButton = new JButton();
 	JButton awayTOButton = new JButton();
+	JButton homeFoulButton = new JButton();
+	JButton awayFoulButton = new JButton();
 
 	public void run() {
 		board.run();
@@ -41,6 +43,8 @@ public class ControlPanel implements ActionListener {
 		homeMinusButton.addActionListener(this);
 		awayPlusButton.addActionListener(this);
 		awayMinusButton.addActionListener(this);
+		homeFoulButton.addActionListener(this);
+		awayFoulButton.addActionListener(this);
 		homeTOButton.addActionListener(this);
 		awayTOButton.addActionListener(this);
 		homeName.addActionListener(this);
@@ -52,14 +56,18 @@ public class ControlPanel implements ActionListener {
 		awayMinusButton.setText("Away Minus");
 		homeTOButton.setText("Home Timeout");
 		awayTOButton.setText("Away Timeout");
+		homeFoulButton.setText("Home Fouls");
+		awayFoulButton.setText("Away Fouls");
 
 		panel.add(homePlusButton);
 		panel.add(homeMinusButton);
 		panel.add(homeTOButton);
-
+		panel.add(homeFoulButton);
+		
 		panel2.add(awayPlusButton);
 		panel2.add(awayMinusButton);
 		panel2.add(awayTOButton);
+		panel2.add(awayFoulButton);
 
 		mainPanel.add(panel);
 		mainPanel.add(panel2);
@@ -75,7 +83,6 @@ public class ControlPanel implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		if (homePlusButton.equals(buttonPressed)) {
 			board.changeHomeScore(1);
-
 		}
 
 		else if (homeMinusButton.equals(buttonPressed)) {
@@ -90,5 +97,28 @@ public class ControlPanel implements ActionListener {
 			board.changeAwayScore(-1);
 		}
 
+		else if (homeTOButton.equals(buttonPressed)) {
+			board.changeHomeTO(-1);
+		}
+
+		else if (awayTOButton.equals(buttonPressed)) {
+			board.changeAwayTO(-1);
+		}
+		
+		else if (homeFoulButton.equals(buttonPressed)) {
+			board.changeHomeFoul(1);
+		}
+		
+		else if (awayFoulButton.equals(buttonPressed)) {
+			board.changeAwayFoul(1);
+		}
+		
+		else if (homeName.equals(e.getSource())) {
+			board.sethomeLabel(newHomeName);
+		}
+		
+		else if (awayName.equals(e.getSource())) {
+			board.setawayLabel(newAwayName);
+		}
 	}
 }

@@ -104,7 +104,27 @@ public class Scoreboard implements ActionListener {
 	public void setawayLabel(String newAwayName) {
 		awayLabel.setName(newAwayName);
 	}
+	
+	public void changeHomeTO(int newHomeTO) {
+		homeTO += newHomeTO;
+		hTOLabel.setText("Timeout: " + Integer.toString(homeTO));
+	}
+	
+	public void changeAwayTO(int newAwayTO) {
+		awayTO += newAwayTO;
+		aTOLabel.setText("Timeout: " + Integer.toString(awayTO));
+	}
 
+	public void changeHomeFoul(int newHomeFoul) {
+		homeFouls += newHomeFoul;
+		hFoulsLabel.setText("Fouls: " + Integer.toString(homeFouls));
+	}
+
+	public void changeAwayFoul(int newAwayFoul) {
+		awayFouls += newAwayFoul;
+		aFoulsLabel.setText("Fouls: " + Integer.toString(awayFouls));
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
