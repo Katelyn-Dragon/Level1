@@ -97,12 +97,12 @@ public class Scoreboard implements ActionListener {
 	}
 	
 	public void sethomeLabel(String newHomeName) {
-		homeLabel.setName(newHomeName);
+		homeLabel.setText(newHomeName);
 		
 	}
 	
 	public void setawayLabel(String newAwayName) {
-		awayLabel.setName(newAwayName);
+		awayLabel.setText(newAwayName);
 	}
 	
 	public void changeHomeTO(int newHomeTO) {
