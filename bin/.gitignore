@@ -13,12 +13,14 @@
 /DuelingButtons.class
 /GD.jpeg
 /GUI.class
+/GamePanel.class
 /GetLatestTweet.class
 /JH.jpg
 /Jeopardy.class
 /KJ.jpg
 /Kettle$Water.class
 /Kettle.class
+/LeagueInvaders.class
 /MethodPractice.class
 /Movie.class
 /NetflixQueue.class
@@ -38,11 +40,8 @@
 /TeaMaker.class
 /TeaParty.class
 /TeaPartyTest.class
-/Test.class
 /Wolves.class
 /commons-logging-1.1.3.jar
 /confuse.jpg
 /faces.jpg
 /twitter4j-core-3.0.5.jar
-/LeagueInvaders.class
-/GamePanel.class
