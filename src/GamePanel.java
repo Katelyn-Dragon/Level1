@@ -9,9 +9,12 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener{
 Timer timer;
+//test2
+GameObject gameObject;
 
 public GamePanel() {
 	timer = new Timer(1000/6, this);
+	gameObject = new GameObject();
 }
 
 public void startGame() {
@@ -25,7 +28,7 @@ public void actionPerformed(ActionEvent e) {
 }
 @Override
 public void paintComponent(Graphics g) {
-	g.fillRect(10, 10, 100, 100);
+	gameObject.draw(g);
 }
 
 @Override

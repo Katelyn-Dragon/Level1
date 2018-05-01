@@ -25,5 +25,6 @@ public void setup() {
 	gameFrame.getContentPane().setPreferredSize(new Dimension(width, height));
 	gameFrame.pack();
 	gamePanel.startGame();
+	gameFrame.addKeyListener(gamePanel);
 }
 }
