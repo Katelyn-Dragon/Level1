@@ -13,6 +13,7 @@
 /DuelingButtons.class
 /GD.jpeg
 /GUI.class
+/GameObject.class
 /GamePanel.class
 /GetLatestTweet.class
 /JH.jpg
@@ -45,3 +46,7 @@
 /confuse.jpg
 /faces.jpg
 /twitter4j-core-3.0.5.jar
+/Grandparent.class
+/Parent.class
+/Kid.class
+/InheritanceRunner.class
