@@ -5,17 +5,18 @@ public class Rocketship extends GameObject{
 
 int speed = 5;
 
-public Rocketship() {
-	super(250, 700, 50, 50);
+public Rocketship(int x, int y, int width, int height) {
+	super(x, y, width, height);
 }
 
 public void update() {
-	
+	super.update();
 }
 
 public void draw(Graphics g) {
 	g.setColor(Color.CYAN);
-	g.fillRect(250, 700, 50, 50);
+	g.fillRect(x, y, width, height);
+	System.out.println(x + "" + y);
 }
 
 }

@@ -30,7 +30,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		optionFont = new Font("Arial", Font.PLAIN, 24);
 		startFont = new Font("Arial", Font.PLAIN, 24);
 		gameOver = new Font("Arial", Font.PLAIN, 48);
-		rocketship = new Rocketship();
+		rocketship = new Rocketship(250,700,50,50);
 	}
 
 	public void startGame() {
@@ -40,7 +40,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		repaint();
 
 		if (currentState == MENU_STATE) {
 			updateMenuState();
@@ -49,7 +48,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		} else if (currentState == END_STATE) {
 			updateEndState();
 		}
-
+		repaint();
 	}
 
 	@Override
@@ -75,7 +74,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("pressed");
-		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if (currentState == END_STATE) {
 				currentState = MENU_STATE;
 			} else if (currentState == MENU_STATE) {
@@ -85,14 +84,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			}
 
 		}
-		if (e.getKeyChar() == KeyEvent.VK_UP) {
-			rocketship.y--;
-		} else if (e.getKeyChar() == KeyEvent.VK_DOWN) {
-			rocketship.y++;
-		} else if (e.getKeyChar() == KeyEvent.VK_LEFT) {
-			rocketship.x--;
-		} else if (e.getKeyChar() == KeyEvent.VK_RIGHT) {
-			rocketship.x++;
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			rocketship.y = rocketship.y - 5;
+		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			rocketship.y = rocketship.y + 5;
+		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			rocketship.x = rocketship.x - 5;
+		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			rocketship.x = rocketship.x + 5;
 		}
 		repaint();
 	}
