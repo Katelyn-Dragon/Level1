@@ -1,8 +1,19 @@
+import java.awt.Graphics;
+
 public class ObjectManager {
 
-Rocketship rocketsship;
+Rocketship rocketship;
 	
-	public ObjectManager() {
-		
+	public ObjectManager(Rocketship rocket) {
+		rocketship  = rocket;
 	}
+	
+	public void update() {
+		rocketship.update();
+	}
+	
+	public void draw(Graphics g) {
+		rocketship.draw(g);
+	}
+	
 }
