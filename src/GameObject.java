@@ -7,6 +7,8 @@ public class GameObject {
 	int width;
 	int height;
 	boolean isAlive = true;
+	int speedx = 0;
+	int speedy = 0;
 	
 	public GameObject(int x, int y, int width, int height) {
 		this.x = x;
@@ -16,7 +18,8 @@ public class GameObject {
 	}
 	
 	public void update(){
-		
+		x = x + speedx;
+		y = y + speedy;
 	}
 	
 	public void draw(Graphics g) {

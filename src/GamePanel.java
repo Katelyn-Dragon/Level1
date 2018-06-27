@@ -87,13 +87,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			rocketship.y = rocketship.y - 5;
+			rocketship.speedy = - 5;
 		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			rocketship.y = rocketship.y + 5;
+			rocketship.speedy =  + 5;
 		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			rocketship.x = rocketship.x - 5;
+			rocketship.speedx =  - 5;
 		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			rocketship.x = rocketship.x + 5;
+			rocketship.speedx = + 5;
 		}
 		
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
@@ -107,6 +107,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("released");
+		rocketship.speedx = 0;
+		rocketship.speedy = 0;
 	}
 
 	public void updateMenuState() {
