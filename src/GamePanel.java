@@ -75,7 +75,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("pressed");
+		//System.out.println("pressed");
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if (currentState == END_STATE) {
 				currentState = MENU_STATE;
@@ -106,7 +106,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("released");
+		//System.out.println("released");
 		rocketship.speedx = 0;
 		rocketship.speedy = 0;
 	}
@@ -117,6 +117,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	public void updateGameState() {
 		objectManager.update();
+		objectManager.manageEnemies();
+		objectManager.checkCollision();
+		objectManager.purgeObjects();
+		if (rocketship.isAlive == false) {
+			currentState = END_STATE;
+		}
 	}
 
 	public void updateEndState() {

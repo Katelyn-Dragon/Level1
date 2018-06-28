@@ -15,6 +15,8 @@ int speed = 10;
 	if (y < 0) {
 		isAlive = false;
 	}
+	super.update();
+	
 	}   
 	
 	public void draw(Graphics g) {

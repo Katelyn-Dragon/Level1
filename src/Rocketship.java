@@ -16,7 +16,6 @@ public void update() {
 public void draw(Graphics g) {
 	g.setColor(Color.CYAN);
 	g.fillRect(x, y, width, height);
-	System.out.println(x + "" + y);
 }
 
 }
