@@ -77,7 +77,7 @@ public class ObjectManager {
 				rocketship.isAlive = false;
 				System.out.println("rocket is dead");
 			}
-			
+
 			for (Projectile p : projectiles) {
 				if (a.collisionBox.intersects(p.collisionBox)) {
 					a.isAlive = false;
@@ -87,6 +87,10 @@ public class ObjectManager {
 
 		}
 
+	}
+	
+	public int getScore() {
+		return score;
 	}
 
 }
