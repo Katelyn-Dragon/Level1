@@ -27,7 +27,7 @@ public class ObjectManager {
 		for (int i = 0; i < aliens.size(); i++) {
 			aliens.get(i).update();
 		}
-
+		
 	}
 
 	public void draw(Graphics g) {
@@ -82,6 +82,7 @@ public class ObjectManager {
 				if (a.collisionBox.intersects(p.collisionBox)) {
 					a.isAlive = false;
 					System.out.println("alien is dead");
+					score++;
 				}
 			}
 
@@ -91,6 +92,7 @@ public class ObjectManager {
 	
 	public int getScore() {
 		return score;
+		
 	}
 
 }

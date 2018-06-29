@@ -14,8 +14,7 @@ public void update() {
 }
 
 public void draw(Graphics g) {
-	g.setColor(Color.CYAN);
-	g.fillRect(x, y, width, height);
+	 g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
 }
 
 }

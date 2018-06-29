@@ -11,7 +11,7 @@ public static void main(String[] args) {
 JFrame gameFrame;
 final static int width = 500;
 final static int height = 800;
-GamePanel gamePanel;
+GamePanel gamePanel;  
 
 public LeagueInvaders() {
 	gameFrame = new JFrame();

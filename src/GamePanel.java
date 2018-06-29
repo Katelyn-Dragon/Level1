@@ -5,8 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.swing.Timer;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
@@ -17,6 +20,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font gameOver;
 	Rocketship rocketship;
 	ObjectManager objectManager;
+	
+	public static BufferedImage alienImg;
+
+    public static BufferedImage rocketImg;
+
+    public static BufferedImage bulletImg;
+
+    public static BufferedImage spaceImg;
 
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
@@ -33,6 +44,24 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		gameOver = new Font("Arial", Font.PLAIN, 48);
 		rocketship = new Rocketship(250,700,50,50);
 		objectManager = new ObjectManager(rocketship); 
+		
+		 try {
+
+             alienImg = ImageIO.read(this.getClass().getResourceAsStream("alien.png"));
+
+             rocketImg = ImageIO.read(this.getClass().getResourceAsStream("rocket .png"));
+
+             bulletImg = ImageIO.read(this.getClass().getResourceAsStream("bullet.png"));
+
+             spaceImg = ImageIO.read(this.getClass().getResourceAsStream("space.png"));
+
+     } catch (IOException e) {
+
+             // TODO Auto-generated catch block
+
+             e.printStackTrace();
+
+     }
 	}
 
 	public void startGame() {
@@ -84,7 +113,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			} else if (currentState == GAME_STATE) {
 				currentState = END_STATE;
 			}
-
+			if (currentState == END_STATE) {
+				rocketship = new Rocketship(250,700,50,50);
+				objectManager = new ObjectManager(rocketship);
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			rocketship.speedy = - 5;
@@ -120,6 +152,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		objectManager.manageEnemies();
 		objectManager.checkCollision();
 		objectManager.purgeObjects();
+		objectManager.getScore();
 		if (rocketship.isAlive == false) {
 			currentState = END_STATE;
 		}
@@ -138,13 +171,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(startFont);
 		g.drawString("Press ENTER To Start", 110, 300);
 		g.setFont(optionFont);
-		g.drawString("Press SPACE For Instructions", 80, 400);
 
 	}
 
 	public void drawGameState(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, 500, 800);
+		g.drawImage(GamePanel.spaceImg, 0, 0, 500, 800, null);
 		objectManager.draw(g);
 	}
 
@@ -156,6 +187,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(gameOver);
 		g.setColor(Color.GRAY);
 		g.drawString("GAME OVER", 100, 200);
+		g.drawString("Score:" + objectManager.getScore() , 150, 300);
 	}
 
 }
