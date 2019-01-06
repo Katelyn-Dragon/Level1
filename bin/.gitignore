@@ -4,6 +4,7 @@
 /BodyPartQuiz.class
 /BookOfIllusions.class
 /Calculator.class
+/Calculators.class
 /Car.class
 /ChuckleClicker.class
 /ControlPanel.class
@@ -55,3 +56,5 @@
 /rocket .png
 /space.png
 /twitter4j-core-3.0.5.jar
+/Game/
+/LeagueInvaders/
